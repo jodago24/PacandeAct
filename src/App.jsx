@@ -92,6 +92,8 @@ const AppContent = () => {
         <Route path="/hogar" element={<HogarPage />} /> {/* Ruta para Hogar */}
         <Route path="/deporte" element={<DeportePage />} /> {/* Ruta para Deporte */}
         <Route path="*" element={<ErrorPage />} />
+
+        
         
         
       </Routes>

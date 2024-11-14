@@ -183,13 +183,19 @@ const HomePage = () => {
       <h2>TECNOLOGÍA</h2>
       <TechCardContainer>
         <TechWideCard image={celulares}>
-          <span>CELULARES</span>
+        <HashLink to="/Tecnologia">
+             <span>CELULARES</span>
+            </HashLink>
         </TechWideCard>
         <TechWideCard image={computadores}>
-          <span>COMPUTADORES</span>
+        <HashLink to="/Tecpc">
+             <span>COMPUTADORES</span>
+            </HashLink>
         </TechWideCard>
         <TechWideCard image={accesorios}>
-          <span>ACCESORIOS</span>
+        <HashLink to="/Tecaccesorios">
+             <span>ACCESORIOS</span>
+            </HashLink>
         </TechWideCard>
       </TechCardContainer>
 
