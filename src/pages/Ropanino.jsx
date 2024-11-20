@@ -5,6 +5,20 @@ import ProductGallery from '../components/ProductGallery';
 import Sidebar from '../components/Sidebar';
 import { fetchExchangeRates, convertCurrency } from '../services/CurrencyService';
 
+// Importación de imágenes para niños
+import CamisetaAzulNino from '../images/CamisetaAzulNino.jpg';
+import CamisetaRojaNino from '../images/CamisetaRojaNino.jpg';
+import CamisetaAmarillaNino from '../images/CamisetaAmarillaNino.jpg';
+
+
+import PantalonNegroNino from '../images/PantalonNegroNino.jpg';
+import PantalonVerdeNino from '../images/PantalonVerdeNino.jpg';
+import PantalonDeportivoNino from '../images/PantalonDeportivoNino.jpg';
+
+import ChaquetaRojaNino from '../images/ChaquetaRojaNino.jpg';
+import ChaquetaGrisNino from '../images/ChaquetaGrisNino.jpg';
+import ChaquetaDeportivaNino from '../images/ChaquetaDeportivaNino.jpg';
+
 const Container = styled.div`
   display: flex;
   min-height: 100vh;
@@ -35,12 +49,20 @@ const BorderedContainer = styled.div`
 `;
 
 const ropaNiñoProducts = [
-  { title: 'Camiseta Azul Niño', price: 50000, image: 'https://via.placeholder.com/150x150?text=Camiseta+Azul+Niño', sizes: ['2T', '3T', '4T', '5', '6'], discount: false, category: 'Camisetas' },
-  { title: 'Pantalón Niño', price: 120000, image: 'https://via.placeholder.com/150x150?text=Pantalón+Niño', sizes: ['2T', '3T', '4T', '5', '6'], discount: false, category: 'Pantalones' },
-  { title: 'Chaqueta Niño', price: 180000, image: 'https://via.placeholder.com/150x150?text=Chaqueta+Niño', sizes: ['2T', '3T', '4T', '5', '6'], discount: true, category: 'Chaquetas' },
-  { title: 'Camiseta Roja Niño', price: 50000, image: 'https://via.placeholder.com/150x150?text=Camiseta+Roja+Niño', sizes: ['2T', '3T', '4T', '5', '6'], discount: true, category: 'Camisetas' },
-  { title: 'Pantalón Verde Niño', price: 120000, image: 'https://via.placeholder.com/150x150?text=Pantalón+Verde+Niño', sizes: ['2T', '3T', '4T', '5', '6'], discount: false, category: 'Pantalones' },
-  { title: 'Chaqueta Gris Niño', price: 180000, image: 'https://via.placeholder.com/150x150?text=Chaqueta+Gris+Niño', sizes: ['2T', '3T', '4T', '5', '6'], discount: true, category: 'Chaquetas' },
+  // Camisetas
+  { title: 'Camiseta Azul Niño', price: 50000, image: CamisetaAzulNino, sizes: ['2T', '3T', '4T', '5', '6'], discount: false, category: 'Camisetas' },
+  { title: 'Camiseta Roja Niño', price: 50000, image: CamisetaRojaNino, sizes: ['2T', '3T', '4T', '5', '6'], discount: true, category: 'Camisetas' },
+  { title: 'Camiseta Amarilla Niño', price: 50000, image: CamisetaAmarillaNino, sizes: ['2T', '3T', '4T', '5', '6'], discount: false, category: 'Camisetas' },
+
+  // Pantalones
+  { title: 'Pantalón Negro Niño', price: 120000, image: PantalonNegroNino, sizes: ['2T', '3T', '4T', '5', '6'], discount: false, category: 'Pantalones' },
+  { title: 'Pantalón Verde Niño', price: 120000, image: PantalonVerdeNino, sizes: ['2T', '3T', '4T', '5', '6'], discount: false, category: 'Pantalones' },
+  { title: 'Pantalón Deportivo Niño', price: 130000, image: PantalonDeportivoNino, sizes: ['2T', '3T', '4T', '5', '6'], discount: true, category: 'Pantalones' },
+
+  // Chaquetas
+  { title: 'Chaqueta Roja Niño', price: 180000, image: ChaquetaRojaNino, sizes: ['2T', '3T', '4T', '5', '6'], discount: true, category: 'Chaquetas' },
+  { title: 'Chaqueta Gris Niño', price: 190000, image: ChaquetaGrisNino, sizes: ['2T', '3T', '4T', '5', '6'], discount: false, category: 'Chaquetas' },
+  { title: 'Chaqueta Deportiva Niño', price: 200000, image: ChaquetaDeportivaNino, sizes: ['2T', '3T', '4T', '5', '6'], discount: true, category: 'Chaquetas' },
 ];
 
 const RopaNiñoPage = () => {

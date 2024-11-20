@@ -203,13 +203,20 @@ const HomePage = () => {
       <h2>HOGAR</h2>
       <WideCardContainer>
         <WideCard image={muebles}>
-          <span>MUEBLES</span>
+        <HashLink to="/HogarPage">
+             <span>MUEBLES</span>
+            </HashLink>
         </WideCard>
         <WideCard image={decoracion}>
-          <span>DECORACIÓN</span>
+        <HashLink to="/DecoraPage">
+             <span>DECORACION</span>
+            </HashLink>
         </WideCard>
         <WideCard image={jardin}>
-          <span>JARDÍN</span>
+        <HashLink to="/GardenPage">
+             <span>JARDIN</span>
+            </HashLink>
+          
         </WideCard>
       </WideCardContainer>
 
@@ -217,13 +224,19 @@ const HomePage = () => {
       <h2>DEPORTE</h2>
       <TechCardContainer>
         <TechWideCard image={futbol}>
-          <span>FÚTBOL</span>
+        <HashLink to="/deporte">
+             <span>FUTBOL</span>
+            </HashLink>
         </TechWideCard>
         <TechWideCard image={baloncesto}>
-          <span>BALONCESTO</span>
+        <HashLink to="/BaloncestoPage">
+             <span>BALONCESTO</span>
+            </HashLink>
         </TechWideCard>
         <TechWideCard image={variedad}>
-          <span>VARIEDAD</span>
+        <HashLink to="/VariedadPage">
+             <span>VARIEDAD</span>
+            </HashLink>
         </TechWideCard>
       </TechCardContainer>
     </HomePageContainer>

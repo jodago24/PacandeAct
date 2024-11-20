@@ -15,50 +15,44 @@ const ToggleArrow = styled.div`
   margin-right: 10px;
   cursor: pointer;
   transition: left 0.3s ease;
-  z-index: 100000;
+  z-index: 100;
   border-radius: 50%;
 
-    &:hover {
-     color: #ff0000;
-    }
+  &:hover {
+    color: #ff0000;
+  }
 `;
-
 
 // Contenedor principal de la barra lateral
 const SidebarContainer = styled.div`
-width: 250px;
+  width: 250px;
   background-color: #000000;
   padding: 20px;
   z-index: 3;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-  border-top: 3px solid rgba(0, 0, 0, 0.9);
   position: fixed;
-  height: 100vh; /* Asegura que la altura sea de 100% de la pantalla */
+  height: 100vh;
   top: 0;
   left: ${({ isSidebarVisible }) => (isSidebarVisible ? '0' : '-270px')};
   transition: left 0.3s ease;
   margin-top: ${({ isScrolled }) => (isScrolled ? '20px' : '90px')};
-  overflow-y: auto; /* Habilita el scroll solo en esta parte */
+  overflow-y: auto;
   padding-bottom: 20px;
 
-  /* Asegura que el último componente llegue a una tercera parte de la pantalla */
-  min-height: calc(100vh - 33vh); /* Hace que el último componente ocupe un 33% de la pantalla */
-  
   /* Estilo para ocultar la barra de desplazamiento */
-  scrollbar-width: thin; /* Para navegadores Firefox */
-  scrollbar-color: transparent transparent; /* Para Firefox */
-  
-  /* Estilo para navegadores Webkit (Chrome, Safari, Edge) */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+
   &::-webkit-scrollbar {
-    width: 0; /* Oculta la barra */
+    width: 0;
   }
 
   &::-webkit-scrollbar-track {
-    background: transparent; /* No mostrar el fondo del track */
+    background: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: transparent; /* No mostrar el thumb */
+    background: transparent;
   }
 `;
 
@@ -94,7 +88,6 @@ const ButtonContainer = styled.div`
   gap: 1px;
 `;
 
-
 // Botones de categorías
 const Button = styled.button`
   padding: 10px;
@@ -127,7 +120,7 @@ const Sidebar = ({ currency, setCurrency }) => {
     } else if (currentScrollPos < lastScrollPos || currentScrollPos <= 90) {
       setIsScrolled(false);
     }
-    
+
     setLastScrollPos(currentScrollPos);
   };
 
@@ -161,51 +154,51 @@ const Sidebar = ({ currency, setCurrency }) => {
         </CurrencySelectContainer>
         <h2>Ropa</h2>
         <ButtonContainer>
-        <Link to="/Ropamujer">
-          <Button>Mujer</Button>
-        </Link>
-        <Link to="/ropa">
-          <Button>Hombre</Button>
-        </Link>
-        <Link to="/Ropaniño">
-          <Button>Niño</Button>
-        </Link>
+          <Link to="/Ropamujer">
+            <Button>Mujer</Button>
+          </Link>
+          <Link to="/ropa">
+            <Button>Hombre</Button>
+          </Link>
+          <Link to="/Ropaniño">
+            <Button>Niño</Button>
+          </Link>
         </ButtonContainer>
-        <h2>Tecnologia</h2>
+        <h2>Tecnología</h2>
         <ButtonContainer>
-        <Link to="/tecnologia">
-          <Button>Celulares</Button>
-        </Link>
-        <Link to="/Tecpc">
-          <Button>Computadores</Button>
-        </Link>
-        <Link to="/Tecaccesorios">
-          <Button>Accesorios</Button>
-        </Link>
+          <Link to="/tecnologia">
+            <Button>Celulares</Button>
+          </Link>
+          <Link to="/Tecpc">
+            <Button>Computadores</Button>
+          </Link>
+          <Link to="/Tecaccesorios">
+            <Button>Accesorios</Button>
+          </Link>
         </ButtonContainer>
         <h2>Hogar</h2>
         <ButtonContainer>
-        <Link to="/Ropamujer">
-          <Button>Mujer</Button>
-        </Link>
-        <Link to="/ropa">
-          <Button>Hombre</Button>
-        </Link>
-        <Link to="/Ropaniño">
-          <Button>Niño</Button>
-        </Link>
+          <Link to="/HogarPage">
+            <Button>Muebles</Button>
+          </Link>
+          <Link to="/DecoraPage">
+            <Button>Decoración</Button>
+          </Link>
+          <Link to="/GardenPage">
+            <Button>Jardín</Button>
+          </Link>
         </ButtonContainer>
         <h2>Deporte</h2>
         <ButtonContainer>
-        <Link to="/Ropamujer">
-          <Button>Mujer</Button>
-        </Link>
-        <Link to="/ropa">
-          <Button>Hombre</Button>
-        </Link>
-        <Link to="/Ropaniño">
-          <Button>Niño</Button>
-        </Link>
+          <Link to="/deporte">
+            <Button>Fútbol</Button>
+          </Link>
+          <Link to="/BaloncestoPage">
+            <Button>Baloncesto</Button>
+          </Link>
+          <Link to="/VariedadPage">
+            <Button>Variedad</Button>
+          </Link>
         </ButtonContainer>
       </SidebarContainer>
     </>

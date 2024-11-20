@@ -5,6 +5,26 @@ import ProductGallery from '../components/ProductGallery';
 import Sidebar from '../components/Sidebar'; // Importa el nuevo componente de barra lateral
 import { fetchExchangeRates, convertCurrency } from '../services/CurrencyService';
 
+// Importación de imágenes
+import CamisetaAzul from '../images/CamisetaAzul.jpg';
+import PantalonNegro from '../images/PantalonNegro.jpg';
+import ChaquetaCuero from '../images/ChaquetaCuero.jpg';
+import CamisetaNegra from '../images/CamisetaNegra.jpg';
+import PantalonJeans from '../images/PantalonJeans.jpg';
+import ChaquetaInvierno from '../images/ChaquetaInvierno.jpg';
+import CamisetaAmarilla from '../images/CamisetaAmarilla.jpg';
+import CamisetaBlanca from '../images/CamisetaBlanca.jpg';
+import PantalonChino from '../images/PantalonChino.jpg';
+import ChaquetaDeportiva from '../images/ChaquetaDeportiva.jpg';
+import CamisetaRoja from '../images/CamisetaRoja.jpg';
+import PantalonCargo from '../images/PantalonCargo.jpg';
+import ChaquetaLarga from '../images/ChaquetaLarga.jpg';
+import CamisetaGris from '../images/CamisetaGris.jpg';
+import PantalonFormal from '../images/PantalonFormal.jpg'; // Nuevo pantalón
+import PantalonDeportivo from '../images/PantalonDeportivo.jpg'; // Nuevo pantalón
+import ChaquetaFormal from '../images/ChaquetaFormal.jpg'; // Nueva chaqueta
+import ChaquetaCasual from '../images/ChaquetaCasual.jpg'; // Nueva chaqueta
+
 // Estilos del contenedor principal
 const Container = styled.div`
   display: flex;
@@ -36,26 +56,26 @@ const BorderedContainer = styled.div`
   border: 1px solid rgba(97, 106, 107, 0.3);
 `;
 
-// Lista de productos
+// Lista de productos con nombres únicos y sus imágenes locales
 const ropaProducts = [
-  { title: 'Camiseta Azul Mujer', price: 80000, image: 'https://via.placeholder.com/300x300?text=Camiseta+Azul+Mujer', sizes: ['S', 'M', 'L', 'XL'], discount: false, category: 'Camisetas' },
-  { title: 'Pantalón Mujer', price: 160000, image: 'https://via.placeholder.com/300x300?text=Pantalon+Mujer', sizes: ['S', 'M', 'L'], discount: false, category: 'Pantalones' },
-  { title: 'Chaqueta Mujer', price: 240000, image: 'https://via.placeholder.com/300x300?text=Chaqueta+Mujer', sizes: ['S', 'M', 'L'], discount: true, category: 'Chaquetas' },
-  { title: 'Camiseta Negra Mujer', price: 80000, image: 'https://via.placeholder.com/300x300?text=Camiseta+Negra+Mujer', sizes: ['S', 'M', 'L', 'XL'], discount: true, category: 'Camisetas' },
-  { title: 'Pantalón Mujer', price: 160000, image: 'https://via.placeholder.com/300x300?text=Pantalon+Mujer', sizes: ['S', 'M', 'L'], discount: false, category: 'Pantalones' },
-  { title: 'Chaqueta Mujer', price: 240000, image: 'https://via.placeholder.com/300x300?text=Chaqueta+Mujer', sizes: ['S', 'M', 'L'], discount: true, category: 'Chaquetas' },
-  { title: 'Camiseta Amarilla Mujer', price: 80000, image: 'https://via.placeholder.com/300x300?text=Camiseta+Amarilla+Mujer', sizes: ['S', 'M', 'L', 'XL'], discount: true, category: 'Camisetas' },
-  { title: 'Camiseta Blanca Mujer', price: 80000, image: 'https://via.placeholder.com/300x300?text=Camiseta+Blanca+Mujer', sizes: ['S', 'M', 'L', 'XL'], discount: true, category: 'Camisetas' },
-  { title: 'Pantalón Mujer', price: 160000, image: 'https://via.placeholder.com/300x300?text=Pantalon+Mujer', sizes: ['S', 'M', 'L'], discount: false, category: 'Pantalones' },
-  { title: 'Chaqueta Mujer', price: 240000, image: 'https://via.placeholder.com/300x300?text=Chaqueta+Mujer', sizes: ['S', 'M', 'L'], discount: true, category: 'Chaquetas' },
-  { title: 'Camiseta Roja Mujer', price: 80000, image: 'https://via.placeholder.com/300x300?text=Camiseta+Roja+Mujer', sizes: ['S', 'M', 'L', 'XL'], discount: true, category: 'Camisetas' },
-  { title: 'Pantalón Mujer', price: 160000, image: 'https://via.placeholder.com/300x300?text=Pantalon+Mujer', sizes: ['S', 'M', 'L'], discount: false, category: 'Pantalones' },
-  { title: 'Chaqueta Mujer', price: 240000, image: 'https://via.placeholder.com/300x300?text=Chaqueta+Mujer', sizes: ['S', 'M', 'L'], discount: true, category: 'Chaquetas' },
-  { title: 'Camiseta Gris Mujer', price: 80000, image: 'https://via.placeholder.com/300x300?text=Camiseta+Gris+Mujer', sizes: ['S', 'M', 'L', 'XL'], discount: true, category: 'Camisetas' },
-  { title: 'Pantalón Mujer', price: 160000, image: 'https://via.placeholder.com/300x300?text=Pantalon+Mujer', sizes: ['S', 'M', 'L'], discount: false, category: 'Pantalones' },
-  { title: 'Chaqueta Mujer', price: 240000, image: 'https://via.placeholder.com/300x300?text=Chaqueta+Mujer', sizes: ['S', 'M', 'L'], discount: true, category: 'Chaquetas' },
-  { title: 'Pantalón Mujer', price: 160000, image: 'https://via.placeholder.com/300x300?text=Pantalon+Mujer', sizes: ['S', 'M', 'L'], discount: false, category: 'Pantalones' },
-  { title: 'Chaqueta Mujer', price: 240000, image: 'https://via.placeholder.com/300x300?text=Chaqueta+Mujer', sizes: ['S', 'M', 'L'], discount: true, category: 'Chaquetas' },
+  { title: 'Camiseta Azul', price: 80000, image: CamisetaAzul, sizes: ['S', 'M', 'L', 'XL'], discount: false, category: 'Camisetas' },
+  { title: 'Pantalón Negro', price: 160000, image: PantalonNegro, sizes: ['S', 'M', 'L'], discount: false, category: 'Pantalones' },
+  { title: 'Chaqueta de Cuero', price: 240000, image: ChaquetaCuero, sizes: ['S', 'M', 'L'], discount: true, category: 'Chaquetas' },
+  { title: 'Camiseta Negra', price: 80000, image: CamisetaNegra, sizes: ['S', 'M', 'L', 'XL'], discount: true, category: 'Camisetas' },
+  { title: 'Pantalón Jeans', price: 160000, image: PantalonJeans, sizes: ['S', 'M', 'L'], discount: false, category: 'Pantalones' },
+  { title: 'Chaqueta de Invierno', price: 240000, image: ChaquetaInvierno, sizes: ['S', 'M', 'L'], discount: true, category: 'Chaquetas' },
+  { title: 'Camiseta Amarilla', price: 80000, image: CamisetaAmarilla, sizes: ['S', 'M', 'L', 'XL'], discount: true, category: 'Camisetas' },
+  { title: 'Camiseta Blanca', price: 80000, image: CamisetaBlanca, sizes: ['S', 'M', 'L', 'XL'], discount: true, category: 'Camisetas' },
+  { title: 'Pantalón Chino', price: 160000, image: PantalonChino, sizes: ['S', 'M', 'L'], discount: false, category: 'Pantalones' },
+  { title: 'Chaqueta Deportiva', price: 240000, image: ChaquetaDeportiva, sizes: ['S', 'M', 'L'], discount: true, category: 'Chaquetas' },
+  { title: 'Camiseta Roja', price: 80000, image: CamisetaRoja, sizes: ['S', 'M', 'L', 'XL'], discount: true, category: 'Camisetas' },
+  { title: 'Pantalón Cargo', price: 160000, image: PantalonCargo, sizes: ['S', 'M', 'L'], discount: false, category: 'Pantalones' },
+  { title: 'Chaqueta Larga', price: 240000, image: ChaquetaLarga, sizes: ['S', 'M', 'L'], discount: true, category: 'Chaquetas' },
+  { title: 'Camiseta Gris', price: 80000, image: CamisetaGris, sizes: ['S', 'M', 'L', 'XL'], discount: true, category: 'Camisetas' },
+  { title: 'Pantalón Formal', price: 180000, image: PantalonFormal, sizes: ['S', 'M', 'L'], discount: false, category: 'Pantalones' }, // Nuevo pantalón
+  { title: 'Pantalón Deportivo', price: 150000, image: PantalonDeportivo, sizes: ['S', 'M', 'L'], discount: true, category: 'Pantalones' }, // Nuevo pantalón
+  { title: 'Chaqueta Formal', price: 260000, image: ChaquetaFormal, sizes: ['S', 'M', 'L'], discount: true, category: 'Chaquetas' }, // Nueva chaqueta
+  { title: 'Chaqueta Casual', price: 220000, image: ChaquetaCasual, sizes: ['S', 'M', 'L'], discount: false, category: 'Chaquetas' }, // Nueva chaqueta
 ];
 
 const RopaMujerPage = () => {
@@ -114,3 +134,4 @@ const RopaMujerPage = () => {
 };
 
 export default RopaMujerPage;
+

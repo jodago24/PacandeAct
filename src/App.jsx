@@ -12,12 +12,18 @@ import RopaPage from './pages/RopaPage'; // Importa la página de Ropa
 import TecnologiaPage from './pages/TecnologiaPage'; // Importa la página de Tecnología
 import HogarPage from './pages/HogarPage'; // Importa la página de Hogar
 import DeportePage from './pages/DeportePage'; // Importa la página de Deporte
+import VariedadPage from "./pages/VariedadPage";
+import BaloncestoPage from "./pages/BaloncestoPage";
+import DecoraPage from "./pages/DecoraPage";
+import GardenPage from "./pages/GardenPage";
 import styled from '@emotion/styled';
 import logopaca from './images/logopaca.png'; 
 import RopaMujer from './pages/Ropamujer';
 import RopaNiñoPage from './pages/Ropanino';
 import Tecnologiacomputadores from './pages/Tecnologiacomputadores';
 import Tecnologiaaccesorios from './pages/Tecnologiaaccesorios';
+import OfertaPage from './pages/OfertasPage';
+
 
 // Estilos para la pantalla de carga
 const LoaderContainer = styled.div`
@@ -87,10 +93,16 @@ const AppContent = () => {
         <Route path="/Ropamujer" element={<RopaMujer />} />
         <Route path="/Tecpc" element={<Tecnologiacomputadores />} />
         <Route path="/Ropaniño" element={<RopaNiñoPage />} />
+        <Route path="/Decorapage" element={<DecoraPage />} />
+        <Route path="/GardenPage" element={<GardenPage />} />
+        <Route path="/VariedadPage" element={<VariedadPage />} />
+        <Route path="/BaloncestoPage" element={<BaloncestoPage />} />
+        <Route path="/HogarPage" element={<HogarPage />} />
         <Route path="/Tecaccesorios" element={<Tecnologiaaccesorios />} />
         <Route path="/tecnologia" element={<TecnologiaPage />} /> {/* Ruta para Tecnología */}
         <Route path="/hogar" element={<HogarPage />} /> {/* Ruta para Hogar */}
         <Route path="/deporte" element={<DeportePage />} /> {/* Ruta para Deporte */}
+        <Route path="/ofertas" element={<OfertaPage />} /> {/* Ruta para OfertaPage */}
         <Route path="*" element={<ErrorPage />} />
 
         

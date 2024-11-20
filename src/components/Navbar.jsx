@@ -273,9 +273,12 @@ const Navbar = () => {
             <MenuItem to="/hogar" onClick={() => setDropdownOpen(false)}>Hogar</MenuItem>
             <MenuItem to="/deporte" onClick={() => setDropdownOpen(false)}>Deporte</MenuItem>
           </DropdownMenu>
-          <DropdownButton>Ofertas</DropdownButton>
-          <DropdownButton>Ofertas</DropdownButton>
-          <DropdownButton>Ofertas</DropdownButton>
+          <DropdownButton>
+  <          Link to="/ofertas" style={{ color: '#fff', textDecoration: 'none' }}>
+             Ofertas
+             </Link>
+          </DropdownButton>
+
         </DropdownButtonContainer>
       </NavbarRow>
 
